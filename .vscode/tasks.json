@@ -2,13 +2,43 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "debug",
+            "type": "shell",
+            "command": "D:\\CAnzhuang\\mingw64\\bin\\g++.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "D:\\CAnzhuang\\mingw64\\bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
+        
+        {
             "label": "compile",
             "type": "shell",
-            "command": ".\\Build.bat",
+            "command": "",
+            "args": [
+
+                "./Build",
+                "cmake",
+                "-G",
+                "\\\"MinGW Makefiles\\\"", 
+                "../",
+                "mingw32-make",
+
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
             }
         }
+        
     ]
 }
